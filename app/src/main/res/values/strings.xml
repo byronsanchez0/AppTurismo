@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Fasedecaetdra2</string>
+    <string name="title">TRIPI</string>
+    <string name="bnt_1">AGREGAR</string>
+    <string name="btn_2">LISTAR</string>
+    <string name="btn_3">WEB</string>
+    <string name="btn_4">AGREGAR</string>
+    <string name="caja_1">Nombre del lugar</string>
+    <string name="caja_2">Ubicacion</string>
+    <string name="caja_3">Cual fue su experiencia en el lugar?</string>
+    <string name="caja_4">Foto del lugar</string>
+    <string name="snackber">Snakbar</string>
+    <string name="person_name">Nombre</string>
+    <string name="btn_edit">EDITAR</string>
+    <string name="btn_delete">ELIMINAR</string>
+    <string name="btn_ver">VER</string>
+</resources>
