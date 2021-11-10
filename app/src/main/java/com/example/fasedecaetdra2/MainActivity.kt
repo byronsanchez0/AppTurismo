@@ -35,9 +35,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun addListeners() {
-        binding.fbAdd.setOnClickListener {
+        binding.btnAddplace.setOnClickListener {
             startActivity(Intent(this, AddSiteActivity::class.java))
         }
+        binding.btnWb.setOnClickListener {
+            startActivity(Intent(this, WebViewActivity::class.java))
+        }
+
 
 
     }}
