@@ -19,9 +19,6 @@ class WebViewActivity : AppCompatActivity() {
         binding.wbTravel.loadUrl(wb_url)
 
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
-
-
-
     }
 
     override fun onBackPressed() {
