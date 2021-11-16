@@ -1,6 +1,7 @@
 package com.example.fasedecaetdra2
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class AddSiteActivity : AppCompatActivity() {
         binding = ActivityAddSiteBinding.inflate(layoutInflater)
         setContentView(binding.root)
         addListener()
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
     }
     private fun addListener() {
         val repository = SiteRepository.getRepository(this)
@@ -41,7 +43,7 @@ class AddSiteActivity : AppCompatActivity() {
                                 )
                             )
                         }
-                        onBackPressed()
+                        super.onBackPressed()
                     }
                 }
             }
@@ -50,6 +52,11 @@ class AddSiteActivity : AppCompatActivity() {
     private fun hideKeyboard() {
         val manager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         manager.hideSoftInputFromWindow(binding.root.windowToken, 0)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+            onBackPressed()
+        return true
     }
 
 }

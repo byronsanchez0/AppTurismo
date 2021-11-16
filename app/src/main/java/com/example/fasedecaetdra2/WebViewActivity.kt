@@ -18,6 +18,10 @@ class WebViewActivity : AppCompatActivity() {
         settings.javaScriptEnabled = true
         binding.wbTravel.loadUrl(wb_url)
 
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+
+
+
     }
 
     override fun onBackPressed() {
@@ -27,5 +31,12 @@ class WebViewActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+
 
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fasedecaetdra2</string>
+    <string name="app_name">TRIPI</string>
     <string name="title">TRIPI</string>
     <string name="bnt_1">AGREGAR</string>
     <string name="btn_2">LISTAR</string>
@@ -14,4 +14,7 @@
     <string name="btn_edit">EDITAR</string>
     <string name="btn_delete">ELIMINAR</string>
     <string name="btn_ver">VER</string>
+    <string name="btn_agregar">ADD PLACE</string>
+    <string name="btn_pagina">WEBSITE</string>
+    <color name="titleColor">#000000</color>
 </resources>

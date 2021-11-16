@@ -11,14 +11,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding;
+    private lateinit var binding: ActivityMainBinding;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         buildList()
         addListeners()
+
+
     }
+
+
     private fun buildList() {
 
         val repository = SiteRepository.getRepository(this)
@@ -34,14 +38,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
     private fun addListeners() {
         binding.btnAddplace.setOnClickListener {
             startActivity(Intent(this, AddSiteActivity::class.java))
+
         }
+
         binding.btnWb.setOnClickListener {
             startActivity(Intent(this, WebViewActivity::class.java))
+
+
         }
 
 
-
-    }}
+    }
+}
