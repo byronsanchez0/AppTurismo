@@ -5,7 +5,10 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true"/>
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -18,7 +21,7 @@
         android:theme="@style/Theme.Fasedecaetdra2">
 
         <provider
-            android:authorities="com.dspm.intents.fileprovider"
+            android:authorities="com.example.fasedecaetdra2.fileprovider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

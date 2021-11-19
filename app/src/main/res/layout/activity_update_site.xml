@@ -24,21 +24,19 @@
         android:layout_height="150dp"
         android:hint="@string/caja_3"
         android:layout_margin="10dp"/>
-    <EditText
-        android:id="@+id/caja_foto"
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/caja_4"
-        android:layout_margin="10dp"/>
-
-    <ImageView
-        android:id="@+id/iv_photo"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:src="@drawable/ic_launcher_background"
-        android:scaleType="centerCrop"
-        android:layout_weight="1"/>
-
+        android:layout_gravity="center">
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_launcher_background"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"/>
+    </LinearLayout>
     <Button
         android:id="@+id/btn_gellery"
         android:layout_width="wrap_content"
@@ -47,13 +45,12 @@
         android:text="Get Picture!" />
 
     <Button
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_Update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/btn_4"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="150dp"
         android:textColor="@color/white" />
-
 
 </LinearLayout>

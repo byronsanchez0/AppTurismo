@@ -1,9 +1,14 @@
 package com.example.fasedecaetdra2
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fasedecaetdra2.databinding.ItemTripiBinding
@@ -34,6 +39,11 @@ class SiteAdapter (private val list: List<Site>, private val context: Context) :
 
         with(holder.binding) {
             tvSite.text = list[position].name
+
+
+            var url = list[position].urlImagen
+            ivPhoto.setImageURI(Uri.parse(url))
+
 
             btnDelete.setOnClickListener {
                 val repository = SiteRepository.getRepository(context)

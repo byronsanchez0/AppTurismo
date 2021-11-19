@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun buildList() {
 
         val repository = SiteRepository.getRepository(this)

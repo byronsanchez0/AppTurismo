@@ -2,9 +2,12 @@ package com.example.fasedecaetdra2
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.example.fasedecaetdra2.databinding.ActivitySeeDetailsBinding
 import com.example.fasedecaetdra2.databinding.ActivityUpdateSiteBinding
@@ -16,10 +19,13 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
 class UpdateSite : AppCompatActivity() {
 
     private lateinit var binding: ActivityUpdateSiteBinding
     private var variablechingona = 0
+    private lateinit var imagenUrl : String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -35,6 +41,29 @@ class UpdateSite : AppCompatActivity() {
 
         val repository = SiteRepository.getRepository(this)
 
+        val resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    if (result.data?.data != null) {
+                        var url = result.data?.data
+                        binding.ivPhoto.setImageURI(result.data?.data)
+                        binding.ivPhoto.rotation = 0f
+
+                        println("FOO00000000000000000000OOTOOOO: $url ")
+
+                        imagenUrl = url.toString()
+
+
+                    }
+                }
+            }
+
+        binding.btnGellery.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            resultLauncher.launch(gallery)
+        }
+
+
         lifecycleScope.launch {
             repository.allSite.collect { sites ->
 
@@ -42,9 +71,12 @@ class UpdateSite : AppCompatActivity() {
 
                     if (it.id == idsite) {
 
+                        var url = it.urlImagen
+
                         binding.cajaNom.setText(it.name)
                         binding.cajaUbi.setText(it.direction)
                         binding.cajaExp.setText(it.experience)
+                        binding.ivPhoto.setImageURI(Uri.parse(url))
 
                         UpdateListener()
 
@@ -53,11 +85,6 @@ class UpdateSite : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 
     private fun UpdateListener() {
@@ -76,7 +103,8 @@ class UpdateSite : AppCompatActivity() {
                                     name = cajaNom.text.toString(),
                                     direction = cajaUbi.text.toString(),
                                     experience = cajaExp.text.toString(),
-                                    urlImagen = ivPhoto.toString()                                )
+                                    urlImagen = imagenUrl
+                                )
                             )
                         }
                         super.onBackPressed()
@@ -92,4 +120,8 @@ class UpdateSite : AppCompatActivity() {
         manager.hideSoftInputFromWindow(binding.root.windowToken, 0)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }
