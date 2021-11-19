@@ -1,9 +1,6 @@
 package com.example.taller2.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.taller2.entities.Site
 import kotlinx.coroutines.flow.Flow
 
@@ -15,6 +12,15 @@ interface SiteDao {
     suspend fun insert(site: Site)
     @Query("DELETE FROM  site_table WHERE id=:id")
     suspend fun deleteOneItem(id:Int)
+
+    @Update
+    suspend fun updateItem(site: Site)
+
+
+    //@Query("SELECT * FROM site_table WHERE id=:id ")
+    //suspend fun wachtDestails(id:Int)
+
+
 
 
 }

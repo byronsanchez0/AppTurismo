@@ -27,8 +27,20 @@ class SiteRepository(private val siteDao: SiteDao)  {
     suspend fun insert(site: Site) {
         siteDao.insert(site)
     }
+
     suspend fun deleteOneItem(Id:Int) {
         siteDao.deleteOneItem(Id)
     }
+
+    suspend fun updateItem(site: Site){
+        siteDao.updateItem(site)
+    }
+
+
+
+   // suspend fun wachtDestails(Id:Int) {
+   //     siteDao.wachtDestails(Id)
+   // }
+
 
 }

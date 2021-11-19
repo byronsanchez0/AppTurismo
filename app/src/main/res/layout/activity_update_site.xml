@@ -24,6 +24,12 @@
         android:layout_height="150dp"
         android:hint="@string/caja_3"
         android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/caja_foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/caja_4"
+        android:layout_margin="10dp"/>
 
     <ImageView
         android:id="@+id/iv_photo"
@@ -41,14 +47,13 @@
         android:text="Get Picture!" />
 
     <Button
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/btn_4"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="150dp"
         android:textColor="@color/white" />
-
 
 
 </LinearLayout>

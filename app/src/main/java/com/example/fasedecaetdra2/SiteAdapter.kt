@@ -30,6 +30,8 @@ class SiteAdapter (private val list: List<Site>, private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: SitesViewHolder, position: Int) {
+
+
         with(holder.binding) {
             tvSite.text = list[position].name
 
@@ -41,11 +43,20 @@ class SiteAdapter (private val list: List<Site>, private val context: Context) :
                 }
             }
 
+            btnWatch.setOnClickListener {
+
+                val id = list[position].id
+
+                val intent = Intent(context, SeeDetails::class.java)
+                intent.putExtra("id", id)
+                context.startActivity(intent)
+
+
+            }
+
+
         }
     }
-
-
-
 
     override fun getItemCount(): Int = list.size
 }

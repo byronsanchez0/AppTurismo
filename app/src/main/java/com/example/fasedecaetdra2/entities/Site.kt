@@ -14,5 +14,7 @@ data class Site(
     @ColumnInfo(name = "direction" )
     val direction: String,
     @ColumnInfo(name = "experience")
-    val experience: String
+    val experience: String,
+    @ColumnInfo(name = "urlImagen")
+    val urlImagen: String
     )
