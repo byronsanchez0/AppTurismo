@@ -15,6 +15,11 @@
     <string name="btn_delete">ELIMINAR</string>
     <string name="btn_ver">VER</string>
     <string name="btn_agregar">ADD PLACE</string>
+    <string name="ubicacion">Ubicacion: </string>
+    <string name="expe">Experiencia: </string>
+
     <string name="btn_pagina">WEBSITE</string>
     <color name="titleColor">#000000</color>
+
+    <color name="ubicacion">#000000</color>
 </resources>

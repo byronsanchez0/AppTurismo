@@ -22,7 +22,6 @@ import kotlinx.coroutines.withContext
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.regex.Pattern
 
 
 const val AUTHORITY = "com.example.fasedecaetdra2.fileprovider"
@@ -30,7 +29,8 @@ const val SUFFIX = ".jpg"
 
 class AddSiteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddSiteBinding
-    private lateinit var imagenUrl: String
+    private lateinit var imagenUrl : String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,65 +71,28 @@ class AddSiteActivity : AppCompatActivity() {
         binding.btnAdd.setOnClickListener {
             hideKeyboard()
             with(binding) {
-                //VALIDACION DE LA CAJA NOMBRE
-                val name = binding.cajaNom.text
-                val isvalid = Pattern.compile("^[A-Z][a-z]+[a-zA-Z\\s]+$").matcher(name).matches()
-                if (cajaNom.text.isNotBlank()) {
-                    if (isvalid) {
-                        //VALIDACION DE LA CAJA UBICACION
-                        if (cajaUbi.text.isNotBlank()) {
-                            val ubi = binding.cajaUbi.text
-                            val isvalid = Pattern.compile("^[a-zA-Z0-9\\s]{0,20}\$").matcher(ubi).matches()
-                            if (isvalid) {
-                                //VALIDACION DE LA CAJA EXPERIENCIA
-                                val exp = binding.cajaExp.text
-                                val isvalid = Pattern.compile("^[a-zA-Z\\s]{0,40}\$").matcher(exp).matches()
-                                if (cajaExp.text.isNotBlank()) {
-                                    if (isvalid) {
-                                        lifecycleScope.launch {
-                                            withContext(Dispatchers.IO) {
-                                                repository.insert(
-                                                    Site(
-                                                        name = cajaNom.text.toString(),
-                                                        direction = cajaUbi.text.toString(),
-                                                        experience = cajaExp.text.toString(),
-                                                        urlImagen = imagenUrl
-                                                    )
-                                                )
-                                            }
-                                            onBackPressed()
-                                        }
-                                    } else {
-
-                                        binding.cajaExp.error =
-                                            "Este campo solamente acepta letras y un maximo de 40 caracteres"
-                                    }
-                                } else {
-                                    binding.cajaExp.error = "Campo vacio"
-                                }
-                                //FIN DE VALIDACION CAJA EXPERIENCIA
-                            } else {
-
-                                binding.cajaUbi.error =
-                                    "Se ha sobrepasado el limite de 20 caracteres"
-                            }
-                        } else {
-                            binding.cajaUbi.error = "Campo vacio"
-                        }
-                        //FIN DE LA VALIDACION DE LA CAJA UBICACION
-                    } else {
-
-                        binding.cajaNom.error =
-                            "Este campo solamente acepta letras, la primera letra debe ser mayuscula"
-                    }
-
+                if (cajaNom.text.isBlank() ) {
+                    Snackbar.make(this.root, "Some fields are empty", Snackbar.LENGTH_SHORT).show()
                 } else {
-                    binding.cajaNom.error = "Campo vacio"
+                    lifecycleScope.launch {
+                        withContext(Dispatchers.IO) {
+                            repository.insert(
+                                Site(
+                                    name = cajaNom.text.toString(),
+                                    direction = cajaUbi.text.toString(),
+                                    experience = cajaExp.text.toString(),
+                                    urlImagen = imagenUrl
+                                )
+                            )
+
+                        }
+                        super.onBackPressed()
+                    }
                 }
-                //FIN DE VALIDACION DE CAJA NOMBRE
             }
         }
     }
+
 
 
     private fun hideKeyboard() {
@@ -141,6 +104,7 @@ class AddSiteActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
 
 
 }
