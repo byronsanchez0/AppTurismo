@@ -16,7 +16,8 @@
         android:layout_marginHorizontal="20dp"
         android:textColorHint="@color/addplace"
         android:backgroundTint="@color/addplace"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        />
 
     />
     <EditText
@@ -77,7 +78,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:text="AÑADIR FOTO"
-        android:backgroundTint="@color/addplace" />
+        android:backgroundTint="@color/addplace"
+        android:elevation="7dp"/>
 
     <Button
         android:id="@+id/btn_Update"
@@ -86,6 +88,8 @@
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:text="AGREGAR"
-        android:backgroundTint="@color/addplace" />
+        android:backgroundTint="@color/addplace"
+        android:elevation="7dp"
+        />
 
 </LinearLayout>
