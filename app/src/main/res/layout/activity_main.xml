@@ -39,7 +39,9 @@
             android:textAlignment="center"
             android:backgroundTint="@color/website"
             android:layout_margin="16dp"
+            android:textColor="@color/white"
 app:icon="@drawable/ic_globe_icon_icons_com_52069"
+            app:iconTint="@color/white"
             />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton

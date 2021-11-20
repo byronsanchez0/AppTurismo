@@ -4,54 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/addfont"
+    >
 
     <EditText
         android:id="@+id/caja_nom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/caja_1"
-        android:layout_margin="10dp"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:textColorHint="@color/addplace"
+        android:backgroundTint="@color/addplace"
+        android:textColor="@color/white"/>
+
     <EditText
         android:id="@+id/caja_ubi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/caja_2"
-        android:layout_margin="10dp"/>
+        android:layout_margin="20dp"
+        android:textColorHint="@color/addplace"
+        android:backgroundTint="@color/addplace"
+        android:textColor="@color/white"/>
+
+    />
+
     <EditText
         android:id="@+id/caja_exp"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginHorizontal="20dp"
         android:hint="@string/caja_3"
-        android:layout_margin="10dp"/>
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/addplace"
+        android:backgroundTint="@color/addplace"
+        android:textColor="@color/white"/>
+
+    />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
-    <ImageView
-        android:id="@+id/iv_photo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_launcher_background"
-        android:scaleType="centerCrop"
-        android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"/>
     </LinearLayout>
     <Button
         android:id="@+id/btn_gellery"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Get Picture!" />
+        android:layout_marginTop="20dp"
+        android:text="Añadir foto"
+        android:backgroundTint="@color/addplace"/>
 
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="@string/btn_4"
-        android:layout_marginLeft="150dp"
-        android:layout_marginRight="150dp"
-        android:textColor="@color/white" />
+        android:text="Agregar"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/addplace"/>
 
 
 

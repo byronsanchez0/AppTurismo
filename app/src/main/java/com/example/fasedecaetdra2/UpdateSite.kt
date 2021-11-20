@@ -80,8 +80,6 @@ class UpdateSite : AppCompatActivity() {
 
                         UpdateListener()
 
-                        imagenUrl = url
-
 
                     }
                 }
@@ -94,7 +92,7 @@ class UpdateSite : AppCompatActivity() {
         binding.btnUpdate.setOnClickListener {
             hideKeyboard()
             with(binding) {
-                if (cajaNom.text.isBlank() || cajaExp.text.isBlank() || cajaUbi.text.isBlank()) {
+                if (cajaNom.text.isBlank() || cajaExp.text.isBlank()) {
                     Snackbar.make(this.root, "Some fields are empty", Snackbar.LENGTH_SHORT).show()
                 } else {
                     lifecycleScope.launch {
