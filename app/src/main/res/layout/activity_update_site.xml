@@ -17,6 +17,8 @@
         android:backgroundTint="@color/addplace"
         android:textColor="@color/white"/>
 
+    
+
     />
     <EditText
         android:id="@+id/caja_ubi"
