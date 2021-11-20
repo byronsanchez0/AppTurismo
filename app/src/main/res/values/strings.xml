@@ -6,7 +6,7 @@
     <string name="btn_3">WEB</string>
     <string name="btn_4">AGREGAR</string>
     <string name="caja_1">Nombre del lugar</string>
-    <string name="caja_2">Ubicacion</string>
+    <string name="caja_2">Ubicación: "Departamento, municipio, ciudad".</string>
     <string name="caja_3">Cual fue su experiencia en el lugar?</string>
     <string name="caja_4">Foto del lugar</string>
     <string name="snackber">Snakbar</string>

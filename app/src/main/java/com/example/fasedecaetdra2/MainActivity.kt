@@ -1,8 +1,10 @@
 package com.example.fasedecaetdra2
 
+import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fasedecaetdra2.databinding.ActivityMainBinding
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buildList() {
+
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 101)
 
         val repository = SiteRepository.getRepository(this)
 

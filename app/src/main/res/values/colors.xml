@@ -10,7 +10,7 @@
     <color name="fondo">#E0E0E0</color>
     <color name="website">#455A64</color>
     <color name="addplace">#BBDED6</color>
-
+    <color name="clearfont">#</color>
     <color name="addfont">#609297</color>
 
 </resources>
